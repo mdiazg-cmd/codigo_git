@@ -1,22 +1,23 @@
-public class Repositorio {
-    private String nombre;
-    private Date fechaCreacion;
-    private Rama ramaPrincipal;
+public class repositorio {
+    private string nombre;
+    private date fechaCreacion;
+    private rama ramaPrincipal;
 
-    public Repositorio(String nombre, Date fechaCreacion) {
+    public repositorio(string nombre, date fechaCreacion) {
         this.nombre = nombre;
         this.fechaCreacion = fechaCreacion;
-        this.ramaPrincipal = new RamaPrincipal("main", fechaCreacion);
+        this.ramaPrincipal = new ramaPrincipal("main", fechaCreacion);
     }
 
-    public Rama crearRama(String nombre) {
-        return new RamaDerivada(nombre, new Date(), ramaPrincipal);
+    public rama crearRama(String nombre) {
+        return new ramaDerivada(nombre, new date(), ramaPrincipal);
     }
 
-    public Rama buscarRama(String nombre) {
+    public rama buscarRama(String nombre) {
         if (ramaPrincipal.getNombre().equals(nombre)) {
             return ramaPrincipal;
         }
         return null; // Aquí podrías extender para buscar en una lista de ramas
     }   
 }
+
